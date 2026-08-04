@@ -1,0 +1,57 @@
+
+https://doc.iptgame.com/docs/en/changes.html
+
+
+转账钱包API
+https://doc.iptgame.com/docs/en/changes.html
+
+无缝钱包API
+https://doc.iptgame.com/docs/wallet-en/changes.html
+看无缝钱包api
+
+
+https://join.skype.com/jraQYCkhimMa
+
+skype账号：
+meiw2109@gmail.com，Qwe334455
+
+
+
+
+curl -X 'POST'  'http://127.0.0.1:7210/api/pay'  -H 'accept: application/json'   -H 'Content-Type: application/json' \
+  -d '{
+  "amount": "1",
+  "cardname": "2",
+  "currency": "3",
+  "notifyurl": "4",
+  "orderid": "5",
+  "paytype": "6",
+  "tobankcode": "7",
+  "userid": "8"
+}'
+
+pg9G正式服账号
+账号：28gamePgBrl
+密码：WFXKY9YtAOKP 
+URL：https://agent.pgone888.com
+
+账号：28gamepg
+密码：FyOo0opJMgDp
+URL：https://agent.pgone888.com
+
+
+正式服 https://game.28.game 
+ip  154.207.104.2  
+
+数据库：mysql -uzhpread01 -P 11001 -p -h 127.0.0.1   密码：0!#3L(uvrykozI
+
+119.28.16.243   11002 goread01  vZn^ucGd?a+v77o
+
+
+后台线上 	        https://ht.28.game/site_setting/MerchantInfo
+后台巴西测试服  https://ly.91th.live/index
+usdt后台    https://uht.sk7755.com/basic_data/userInfo
+
+测试服对外地址7755
+https://m.sk7755.com
+

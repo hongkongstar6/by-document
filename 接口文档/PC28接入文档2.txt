@@ -1,0 +1,192 @@
+PC28接入文档：
+
+平台： PC28
+游戏： PC28
+
+商户ID： merchantId		Integer  	5001
+加密KEY： secretKey		String  	aad51cbfec2385748ec9d41581f649ba
+
+内网地址： http://127.0.0.1:8828
+
+通用参数(每个接口都要传入)：
+merchantId  Integer  商户ID：
+merchantUserUid  String  商户方用户唯一ID
+time  Integer 秒级时间戳
+sign  String  加密信息
+
+sign 加密方式：
+MD5.MD5generator({secretKey} + {merchantUserUid} + {secretKey} + {time});
+按顺序拼接一下字符串： secretKey merchantUserUid secretKey time
+拼接后进行MD5加密
+
+1. 请求游戏地址接口：
+传入参数：上面通用参数；
+接口： /openapi/requestGameUrl
+返回如下：
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+        "gameUrl": "https://pc.sk7755.com/index?param=fd3f93b7ffdb41cbaf808c38a2f9b18a83f3fb0f007579cab41f86a65b2a0fe6acca9d1eb984163fe47247325239e161aef4e0d4d773ccf36a97f478f855498fb00df7cd2ef6c13b6b982c7f10683b5f157bdc1b75897d8a5a316417f25d8f1d9fba6f36bf51f452618e4d305ce2716732de903569c008a48fd233c22e937c882d6fbc29975d51bcbe9a4a94f2f83559"
+    },
+    "success": true,
+    "dataJsonObject": {
+        "gameUrl": "https://pc.sk7755.com/index?param=fd3f93b7ffdb41cbaf808c38a2f9b18a83f3fb0f007579cab41f86a65b2a0fe6acca9d1eb984163fe47247325239e161aef4e0d4d773ccf36a97f478f855498fb00df7cd2ef6c13b6b982c7f10683b5f157bdc1b75897d8a5a316417f25d8f1d9fba6f36bf51f452618e4d305ce2716732de903569c008a48fd233c22e937c882d6fbc29975d51bcbe9a4a94f2f83559"
+    }
+}
+
+code： int 类型，0成功，其他都是失败；
+成功时，从data对象中获取 gameUrl 字段，即游戏地址；
+失败时，可通过 msg 获取失败信息；
+
+2.上分接口：
+接口： /openapi/scoreUp
+传入参数：上面通用参数；加下面接口参数：
+amount Integer 上分金额，分为单位；
+返回如下：
+{"code":0,"msg":"成功","data":null,"success":true,"dataJsonObject":null}
+code： int 类型，0成功，其他都是失败；
+失败时，可通过 msg 获取失败信息；
+
+3.下分接口:
+接口： /openapi/scoreDown
+传入参数：上面通用参数；加下面接口参数：
+amount Integer 下分金额，分为单位；
+当 amount 不传或者传入0时，代表下分全部余额
+返回如下：
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+        "amount": 1000
+    },
+    "success": true,
+    "dataJsonObject": {
+        "amount": 1000
+    }
+}
+code： int 类型，0成功，其他都是失败；
+成功时，从data对象中获取 amount 字段，即下分金额，分为单位；
+失败时，可通过 msg 获取失败信息；
+
+
+4. 查询余额接口：
+接口： /openapi/checkBalance
+传入参数：上面通用参数；
+返回如下：
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+        "amount": 60100
+    },
+    "success": true,
+    "dataJsonObject": {
+        "amount": 60100
+    }
+}
+code： int 类型，0成功，其他都是失败；
+成功时，从data对象中获取 amount 字段，即余额，分为单位；
+失败时，可通过 msg 获取失败信息；
+
+
+========================================
+5. 获取下注日志；
+接口： /openapi/getBetLog
+传入参数：上面通用参数；加下面接口参数：
+startId Integer 开始ID，第一次传0，后面传前面获取到的最大ID，获取的数据不包括此ID的数据,即list里的id字段；
+size Integer 数量，默认1000，最大1000，不传此参数或者传入0，则使用默认值；
+返回如下：
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+        "list": [
+            {
+                "id": 14,			//记录ID，对应参数的  startId
+                "userId": 1,
+                "merchantId": 1000,		// 商户ID
+                "merchantUserUid": "88888888",  // 商户用户ID
+                "lssueNo": 3316346, //期号
+                "orderNum": "3316346-1-1753795410623-87055", //订单ID
+                "subOrderNum": "3316346-1-1753795410623-87055-31", //子订单ID
+                "betAreaId": 31, 	//下注区域
+                "betOdds": 2.00, 	//理论赔率
+                "settleOdds": 2.00,	//实际结算赔率
+                "betAmount": 5000,	//下注金额 分
+                "hitFlag": 0,		//是否命中
+                "rewardsAmount": 0,	//返奖金额
+                "winAmount": 0,		//净利润  如果命中，则有此值，值为 rewardsAmount-betAmount
+                "settleStatus": 1,	//是否结算完成
+                "settleTime": 1753795507000,//结算时间
+	"addTime": 1753795410000,//下注时间
+                "betAmountStr": "50.00",	//下注金额  元
+                "rewardsAmountStr": "0.00"  //返奖金额  元
+            },
+            {
+                "id": 15,
+                "userId": 1,
+                "merchantId": 1000,
+                "merchantUserUid": "88888888",
+                "lssueNo": 3316346,
+                "orderNum": "3316346-1-1753795410623-87055",
+                "subOrderNum": "3316346-1-1753795410623-87055-32",
+                "betAreaId": 32,
+                "betOdds": 2.00,
+                "settleOdds": 2.00,
+                "betAmount": 5000,
+                "hitFlag": 1,
+                "rewardsAmount": 10000,
+                "winAmount": 5000,
+                "settleStatus": 1,
+                "settleTime": 1753795507000,
+	"addTime": 1753795410000,
+                "betAmountStr": "50.00",
+                "rewardsAmountStr": "100.00"
+            }
+        ]
+    }
+}
+
+
+6. 获取结算日志；
+接口： /openapi/getSettleLog
+传入参数：上面通用参数；加下面接口参数：
+startId Integer 开始ID，第一次传0，后面传前面获取到的最大ID，获取的数据不包括此ID的数据,即list里的id字段；
+size Integer 数量，默认1000，最大1000，不传此参数或者传入0，则使用默认值；
+返回如下：
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {A
+        "list": [
+            {
+                "id": 11,	//记录ID，对应参数的  startId
+                "userId": 1,
+                "merchantId": 1000,  // 商户ID
+                "merchantUserUid": "88888888", // 商户用户ID
+                "balanceStart": 60600, //开始余额 分 
+                "changeCoin": -35000,  //变化金额 分 
+                "balanceEnd": 25600, //结束余额 分 
+                "type": 3, //类型  1上分，2下分，3下注，4结算
+                "orderId": "3316346-1-1753795410623-87055", //订单ID
+                "remark": "游戏投注", //描述
+                "addTime": 1753795411000 //日志时间
+            },
+            {
+                "id": 12,
+                "userId": 1,
+                "merchantId": 1000,
+                "merchantUserUid": "88888888",
+                "balanceStart": 25600,
+                "changeCoin": 20000,
+                "balanceEnd": 45600,
+                "type": 4,
+                "orderId": "3316346-1-1753795410623-87055",
+                "remark": "游戏结算",
+                "addTime": 1753795507000
+            }
+        ]
+    },
+    "success": true
+}

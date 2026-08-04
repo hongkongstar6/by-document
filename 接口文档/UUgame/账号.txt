@@ -1,0 +1,8 @@
+總代理後台帳號：28game_Report，密码已修改为Aa123456
+
+已經創建以下子代理:
+子代理(AgentID) : 28game_Seamless
+
+後台帳密與名稱相同
+
+測試後台：https://uat-wb-api4.jlfafafa3.com/

@@ -1,0 +1,59 @@
+NY8 UAT
+==============================
+GI  URL：https://gi.playacestaging.com/
+GCI URL：https://gci.playacestaging.com/
+cagent : NY8_PA
+MD5 KEY : ny8GW4fUpmWt
+DES KEY : ny8qJA%W
+==============================
+CheckOrCreateGameAccount检测并创建账号:
+cagent=NY8_PA/\\/loginname=NY8PA2785673/\\/method=lg/\\/actype=1/\\/password=1q2w3e4r5t/\\/oddtype=A/\\/cur=CNY
+https://gi.playacestaging.com/doBusiness.do?params=Y5bdUt0xKl7DrKKYTSyfGz0i/z0ib6Gzc0xMvTO8BBNvmcNBxNJgkmwvmi/lNMJ3g0YgCyyCMKE7HOv4qiNwDyNv06qfJ7MXhv+NcEHed7bLr+WzbdHdWD8j7SsBaUe06/wvw9pqIJpmxOtCP3pKNa5qLHjjQaIXcIdVOzD0OzA=&key=75e216bf0eab692cf62629570419c451
+
+GetBalance查询余额:
+cagent=NY8_PA/\\/loginname=NY8PA2785673/\\/method=gb/\\/actype=1/\\/password=1q2w3e4r5t/\\/cur=CNY
+https://gi.playacestaging.com/doBusiness.do?params=Y5bdUt0xKl7DrKKYTSyfGz0i/z0ib6Gzc0xMvTO8BBNvmcNBxNJgkmwvmi/lNMJ3luDU7oBqzW47HOv4qiNwDyNv06qfJ7MXhv+NcEHed7bLr+WzbdHdWNnh9MxFk6/sk1YYx4uUYb24F/+epT6KEw==&key=7dd60643c55dab8ff16c6013b27c6f61
+
+PrepareTransfreCredit转账:
+cagent=NY8_PA/\\/loginname=NY8PA2785673/\\/method=tc/\\/billno=NY8_PA7741964394626/\\/type=IN/\\/credit=100/\\/actype=1/\\/password=1q2w3e4r5t/\\/cur=CNY
+https://gi.playacestaging.com/doBusiness.do?params=Y5bdUt0xKl7DrKKYTSyfGz0i/z0ib6Gzc0xMvTO8BBNvmcNBxNJgkmwvmi/lNMJ3dE7IyXDEl0PGeC0S4Tsjo6L3Rq49OqACVf6xSxrfzm1n4Nu2jmWyEuPWeZVUcfzzNQl1cPQLb+tyvV2iSUX4EV5ysueXHz/swhBGKX122oE9luDdU3z+FjEmvyQONv4cOGdzP9C3nNBmiQMpfXTzFk8HUyaEOu1e&key=80f3456f1e315a41b96158b4fe092e52
+
+TransferCreditConfirm转账确认:
+cagent=NY8_PA/\\/loginname=NY8PA2785673/\\/method=tcc/\\/billno=NY8_PA7741964394626/\\/type=IN/\\/credit=100/\\/actype=1/\\/flag=1/\\/password=1q2w3e4r5t/\\/cur=CNY
+https://gi.playacestaging.com/doBusiness.do?params=Y5bdUt0xKl7DrKKYTSyfGz0i/z0ib6Gzc0xMvTO8BBNvmcNBxNJgkmwvmi/lNMJ31RdwJygEuqzOqg9R4aO4bgc3zuGrX2noGrDz0EqIfHJKZ7T0hg/Q0CFLjK9MQ8VpSnjuHipQSzDypgXCjXvP+Dsc6/iqI3APqr94fAZ8nLxauB5HAfxX9HJEE8uONfkkZEd5jtN36MPjCMToUkAfpKxxqmSrX3P8&key=57b264a3dbd07ab288a7ee14c04aff3b
+
+QueryOrderStatus查询订单状态:
+cagent=NY8_PA/\\/billno=NY8_PA7741964394626/\\/method=qos/\\/actype=1/\\/cur=CNY
+https://gi.playacestaging.com/doBusiness.do?params=Y5bdUt0xKl7DrKKYTSyfG86qD1Hho7huBzfO4atfaegasPPQSoh8cmw3sdn5wDcQGIeRChLeiXDheAz0HhhUs1n9aNxP6s+3kopjIT8YJREf9NvI/JVK1aFnxqHd4wB1&key=9004398de25f29482803bf561474b520
+
+forwardGame进入游戏:
+cagent=NY8_PA/\\/loginname=NY8PA2785673/\\/actype=1/\\/password=1q2w3e4r5t/\\/dm=bgyl.com/\\/sid=NY8_PA4860826019363/\\/lang=1/\\/gameType=1/\\/oddtype=A/\\/cur=CNY
+https://gci.playacestaging.com/forwardGame.do?params=Y5bdUt0xKl7DrKKYTSyfGz0i/z0ib6Gzc0xMvTO8BBNvmcNBxNJgkqiKsbs3wQSytp4DDjIaVFbWz6RH1/p/dlgGcLGKg02OP/qMx0RsJ1J3Qlwhau48st9G9rN1Ic5p4ehbDN3h3dyxxYBClIKckDD7hmh287sizDkRy7gWKSULD3G25aq+23RypFkc7b1yFldse9emCTzVim0/7Ar4OVjXNXYmuqxtTz544JxKjyHB3xzsfkYJkw==&key=2436fe9a676d0989e4422be4780a0167
+
+
+==============================
+Web Documentation System https://docs.infopa.cc
+Account: NY8
+Password: YIKP08Dn
+
+PA Live Casino, Fishing Back Office http://databo.playacestaging.com/
+Account: bbgyny8
+Password: YsVbmtNv
+
+PA Slots Back Office http://slotbo.playacestaging.com/
+Account: nbygy8
+Password: YsVbmtNv
+
+YP Arcade Back Office http://data.ypdemo.net/
+Account: YPNY8hzMuS
+Password: YsVbmtNv
+
+==============================
+Data obtain API information
+
+URL: http://dataapi.playacestaging.com:3333
+Plain code/明码: 047CB7E3AB80C056168EE1C6E1918A75
+cagent for Data API: NY8
+
+==============================
+

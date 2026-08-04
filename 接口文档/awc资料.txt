@@ -1,0 +1,23 @@
+测试服：
+awc，单一钱包地址 https://allwecan.info/api-doc/single-wallet/PRD
+awc api服务地址：https://tttint.apihub55.com
+awc 后台地址  https://tttbo.apihub55.com/  账号:hongkongstar66 密码：F01V63QWLM
+awc测试用例地址：https://allwecan.info/single-wallet-testing
+awc游戏列表地址：https://allwecan.info/public/1026523140
+
+
+awc正式服：
+awc游戏列表地址：https://allwecan.info/public/1026523140
+api服务地址：https://fsaap.velkigames365.cc
+
+awc 服务台地址：  https://support888.atlassian.net/servicedesk/customer/portal/7/AWCSD-179546?created=true
+(用途：做到问题找技术人员解决，在这里提工单)
+账号 zq3343@gmail.com
+密码：12345678
+
+awc正式服后台：https://fsaag.velkigames365.cc
+账号：game28ag
+密码：12345678
+
+
+包网：rengjia8@gmail.com，qq.12345

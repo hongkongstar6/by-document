@@ -1,0 +1,20 @@
+Hi team,
+
+Thank you for your patience.
+Please be informed that
+Yggdrasil Gaming
+
+Transfer wallet DCT stage environment for the following brand is ready:
+Group: IGGroup
+
+Below is the API information and path:
+api_url: https://gaming.stagedc.net
+getBetData_url: https://ticket.stagedc.net
+
+Brand: (T033769) baigongyule
+API Key: B29F0BB68C9844E590B321E7E3A1189F
+
+BO(Stage): https://bo.stagedc.net/login
+Group ID : TG033
+Account : baigongyule
+Pass : j/KiZ;|7At

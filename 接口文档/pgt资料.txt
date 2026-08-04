@@ -1,0 +1,86 @@
+
+商户号：A38
+货币符号：R$
+RTP设置：88/78
+
+传参加白 IP：154.207.104.45
+
+测试服：
+取钱：http://154.207.104.45:7200/middle/balance
+发送：http://154.207.104.45:7200/middle/result
+
+正式服：
+取钱：https://game.28.game/middle/balance 查询余额
+结算：https://game.28.game/middle/result    结算
+
+
+对接文档：
+https://apia38.000233.cc/apisrv/about/apipgseamless
+
+baseURI：
+https://apia38.000233.cc/apisrv     --------不同的商户号,url不同
+
+apikey：
+kxmf7c6YVGbYWecuNfW7rdYPwTeWCaPm
+    
+备注：
+一：(player/create) adminname
+       这个参数，某些对接的平台， 
+       需要 ‘‘纪录’’使用而已，
+       如果贵司不需要，
+       请填 platform 之类的 string
+
+二：Sign签，请按照文档内写的顺序放.
+       也别多加别的参数.
+三：baseURI，
+       是文档内提到 baseURL的地方，
+       用这个网址替代，不能用来直接开启.
+    
+数据后台：
+https://backenda38.000233.cc/admin
+
+帐号与密码：
+a38cs01  ///  qaza38cs01
+
+
+
+
+商户号：A63（单一钱包)    
+使用语系：巴西 BRL    
+货币符号：R$    
+RTP设置：88/78    
+    
+传参加白 IP：154.207.104.2  
+★ 必须使用 加白IP 传参 ★
+
+对接文档：
+https://apia63.000233.cc/apisrv/about/apipgseamless    
+
+baseURI：
+https://apia63.000233.cc/apisrv      ------不同的商户号,url不同
+
+apikey：
+et67zdt67RDgqKbaMdZrSstpcfBQNGqQ
+    
+        
+备注：    
+一：( player/create ) adminname
+       管理員名稱  这个参数，某些对接的平台， 
+       需要 ‘‘纪录’’使用而已，如果贵司不需要，
+       请填 platform 之类的 string
+
+二：Sign签，请按照文档内写的顺序放.
+       不可以多加别的参数.
+
+三：baseURI，是文档内提到 baseURL的地方，
+       用这个网址替代，不能用来直接开启.
+
+★★★ 如果有报错信息，请先检查  ★★★
+          传参服务器的 IP，有无加白
+  
+        
+数据后台：
+https://backenda63.000233.cc/admin    
+
+帐号与密码：
+a63cs01  ///  qaza63cs01

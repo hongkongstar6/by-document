@@ -1,0 +1,45 @@
+platform：AWC,supplier_id:1
+awc Multi-wallet 转帐钱包 API Doc | AWC  
+https://allwecan.info/api-doc/multi-wallet/PRD#operation/GetSummaryByTxTimeHour
+
+
+platform：ZFPP,supplier_id:2
+智峰 pp-api文档，密码：ilikeppgames
+https://pragmaticplay.owncloud.online/s/8JSYouaWjywI1Uj/authenticate
+
+platform：OPS,supplier_id:3
+ops 转账钱包文档
+https://drive.google.com/file/d/13vIB-lMgJ05GdgnLMA2svB8XkfBXSnl0/view
+
+platform：JDB,supplier_id:4
+JDB api文档 
+https://doc.jygrq.com/cn/transfer/introduction
+
+platform：JDB,supplier_id:5
+3s体育 API DOCUMENT
+https://apidoc.uv178.com/api_document_v4/api_main.php?language=simplified
+
+platform：CQ9,supplier_id:6
+CQ9--api文档
+file:///C:/Users/Administrator/Downloads/Telegram Desktop/轉帳錢包 GameBoy API 介接文件_CN.html
+
+
+platform：ONE,supplier_id:7
+one api 文档
+https://apidoc-gasea.gitbook.io/zh-operator-transfer-wallet-api-documentation
+
+platform：BBIN,supplier_id:8
+bbin api文档
+https://hackmd.io/@EGwinner/Hyl7z2P3s
+
+platform：DB,supplier_id:9
+DB 真人API对接文档：https://docs.1roho.com
+登录账号：api
+登录密码：a12345678
+
+MG文档
+https://commonwalletdocs.microgaming.game/?t=N6lJj6KR19Q-XTJgvnRsmg&l=zh
+
+PA游戏
+https://docs.ilivehub.com
+账号：NY8，密码：abc123456

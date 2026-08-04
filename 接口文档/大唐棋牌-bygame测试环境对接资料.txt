@@ -1,0 +1,26 @@
+API对接文档：
+链接：https://easydoc.net/s/58453499  
+密码：nAMZbOMG
+
+游戏试玩地址：play.cyrpq.com
+Api接入地址：ng.mqbbx.com
+管理后台地址：https://dtomgr.mqbbx.com/Home/Index
+
+商户唯一编码	    agentid ：111442
+参数加密编码	    descode：269997FACE0433A0
+请求校验加密编码       md5code：22117967E9C0167A
+以上信息可自行登录管理后台获取 ID       ：111442 后台密码  ：000000
+管理后台账号：bygame 谷歌验证秘钥：MFRTIZJUGRSTQNLB
+(需要下载谷歌身份验证器 绑定上面的密钥 生成的6位数验证码 ）
+
+登录管理后台【运营管理】-【代理管理】-选中列表中数据，点击上方操作按钮【查看代理】
+descode与md5code可自行生成修改
+
+Api请求详见Api说明文档
+
+注：免费试玩是完全独立的服务器，与本文档中线路信息没有关系，仅用于游戏体验
+
+游戏列表图标：https://drive.google.com/drive/folders/1PE8nzoSoQuX8bYPPafSAd3I146jRqm49?usp=sharing
+图标都在这个链接里 可到里面查看哦
+
+

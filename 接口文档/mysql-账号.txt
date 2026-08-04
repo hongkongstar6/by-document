@@ -1,0 +1,14 @@
+go-backend
+用户名：admin
+  初始密码：GK18VWwua45X@NYb
+  角色：super（超级管理员·全权限）
+
+
+by3数据库
+127.0.0.1       3307     by3test01    9^T3^haqshxmsS<
+43.134.45.67 11000  by3test01    9^T3^haqshxmsS<
+
+by3 机器
+服务器 43.134.45.67  44123 by3dev  登录后 sudo su -l web01  测试服试下
+redis 127.0.0.1 admin123
+mysql 127.0.0.1 3307 by3test01  9^T3^haqshxmsS<

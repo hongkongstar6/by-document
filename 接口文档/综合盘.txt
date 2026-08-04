@@ -1,0 +1,78 @@
+
+https://doc.iptgame.com/docs/en/changes.html
+
+
+转账钱包API
+https://doc.iptgame.com/docs/en/changes.html
+
+无缝钱包API
+https://doc.iptgame.com/docs/wallet-en/changes.html
+看无缝钱包api
+
+
+https://game.28.game/nines/wallet       钱包回调
+http://154.207.104.45:7200/nines/wallet 钱包回调
+
+https://join.skype.com/jraQYCkhimMa
+
+skype账号：
+meiw2109@gmail.com，Qwe334455
+
+
+
+
+curl -X 'POST'  'http://127.0.0.1:7210/api/pay'  -H 'accept: application/json'   -H 'Content-Type: application/json' \
+  -d '{
+  "amount": "1",
+  "cardname": "2",
+  "currency": "3",
+  "notifyurl": "4",
+  "orderid": "5",
+  "paytype": "6",
+  "tobankcode": "7",
+  "userid": "8"
+}'
+
+正式服 https://game.28.game 
+ip  154.207.104.2  
+
+数据库：mysql -uzhpread01 -P 11001 -p -h 127.0.0.1   密码：0!#3L(uvrykozI
+
+119.28.16.243   11002 goread01  vZn^ucGd?a+v77o
+
+pg-9g测试服后台
+https://agent.pgone.co/#/index
+vip999Brl
+IeXY9gJV6xvz
+
+---------------------------------------------------
+union_game_server数据库，删除重复数据
+
+第1：
+CREATE TABLE temp_settle_info_1  (
+     id varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '唯一id',    
+     PRIMARY KEY (id) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '临时日志表' ROW_FORMAT = DYNAMIC;
+
+第2：
+insert into temp_settle_info_1 select max(data_uid) as id from log_lb_settle_info    where game_platform='AWC-PG'  group by order_no,action having count(*)>1;
+
+第3：
+delete from log_lb_settle_info2 where data_uid in (select id from temp_settle_info_1);
+
+第4：
+delete from  log_lb_settle_info where data_uid in (select id from temp_settle_info_1);
+
+第5：
+drop table temp_settle_info_1 ;
+----------------------------------------------------
+
+支付：119.28.16.243  11002   goread01 vZn^ucGd?a+v77o
+数据库密码：119.28.16.243   zhpread01   1n])*mLhvnk4iUd
+银河：  11010 
+白宫：  11001
+七星海：11006
+U界：  11005
+UG:    11007
+8号： 11008
+多宝： 11009

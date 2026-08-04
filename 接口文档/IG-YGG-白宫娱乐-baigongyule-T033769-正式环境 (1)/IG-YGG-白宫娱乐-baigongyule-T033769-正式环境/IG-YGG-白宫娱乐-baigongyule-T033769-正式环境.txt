@@ -1,0 +1,20 @@
+Hi team,
+
+Thank you for your patience.
+Please be informed that
+Yggdrasil Gaming
+
+Transfer wallet DCT prod environment for the following brand is ready:
+Group: IGGroup
+
+Below is the API information and path:
+api_url: https://gaming.dcgames.asia
+getBetData_url: https://ticket.dcgames.asia
+
+Brand: (T033769) baigongyule
+API Key: EC09DEA3A36B46988656B0E665DE6CA4
+
+BO: https://bo.dcgames.asia/login
+Group ID : TG033
+Account : baigongyuleAdmin
+Pass : XJ82o)kfX24

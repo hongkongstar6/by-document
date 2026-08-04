@@ -1,0 +1,12 @@
+https://ht.uufq346.com/default
+账号：bygame01
+密码：Aa123456@@
+
+{
+"api_url":"https://api.uufq346.com/channelHandle?",
+"pull_url":"https://record.uufq346.com/getRecordHandle?",
+"api_deskey":"68F6554FF1760F52",
+"api_md5key":"80433ACF4891220E",
+"api_cagent":"66145",
+"lineCode":"1"
+}

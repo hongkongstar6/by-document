@@ -1,0 +1,26 @@
+•	UAT(User Acceptance Test)：
+API URL：
+https://uat-wb-api-2.huuykk865s.com/api1/
+https://uat-wb-api-2.jiscc88.com/api1/
+https://uat-wb-api-2.jismk2u.com/api1/
+https://uat-wb-api-2.jiscc77s.com/api1/
+https://uat-wb-api-2.kijl788du.com/api1/
+AgentKey： 33a43b6d1e80dfafa5dfee436fd0713d1e0dd130
+
+•	 
+API URL：
+https://wb-api-2.zcchb1ap.com/api1/
+https://wb-api-2.h5bzgga2.com/api1/
+https://wb-api-2.royalflush888.com/api1/
+https://wb-api-2.k6749ktm.com/api1/
+https://wb-api-2.qu5feb8n.com/api1/
+https://wb-api-2.nqaqwty9.com/api1/
+https://wb-api-2.richjourney888.com/api1/
+AgentKey： a4f1454de639c12c7b43a62edf05eb42ace5370f
+
+•	UTC-4 is used for the request time and response time.
+•	Please use the format ISO-8601 for the request time.
+
+Exmaple：2018-12-25T06:54:00
+•	Note: you should use the domain starting with wbwebapi for game client.
+        
