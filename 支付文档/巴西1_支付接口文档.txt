@@ -1,0 +1,32 @@
+
+商户编号: 418
+帐号: HP28
+密码: 123456
+密钥:  
+商户后台: https://www.bugaq.com/shanghu
+
+
+代收   编号1005
+api巴西代收通道接口：https://www.bugaq.com/api/Bxds/SubmitOrder 
+
+api 查询地址 : https://www.bugaq.com/api/Bx/QueryOrder
+
+
+商户正式环境的回调IP:44.194.35.68,107.167.19.170,52.87.221.79
+
+
+巴西代收文档https://www.bugaq.com/help/bxds.html
+
+
+代付  扩展讯息帮我填2002
+巴西代付接口：https://www.bugaq.com/api/Bx/SubmitOrder 
+
+api 查询地址 : https://www.bugaq.com/api/Bx/QueryOrder
+
+余额查询：https://www.bugaq.com/api/Bx/QueryBalance 
+
+
+商户正式环境的回调IP:44.194.35.68,107.167.19.170,52.87.221.79
+
+
+巴西代付文档 https://www.bugaq.com/help/bxdf.html

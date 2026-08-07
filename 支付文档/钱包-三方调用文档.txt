@@ -1,0 +1,164 @@
+
+一. 以下参数由后台配置分发
+
+接口地址： https://26101.sk7789.com
+appId:  9772c7d30dd34b678e33465262af1e32   //appid
+appkey:  93b895ba5cc94170  //接口加密密钥
+authUserId:  6666666  //授权用户
+authUserIdToken:  bb0da7794f254ceda671b14801b75834 //授权用户的token
+
+以上参数接入成功后会进行分配
+
+=========================================================================
+注册钱包用户ID 8888888 进行上分 10000 ，授权者是 6666666
+
+二.玩家上分 /api/transfer/deposit  post 请求 application/json
+
+1.请求参数：
+{
+    "appId": "9772c7d30dd34b678e33465262af1e32",//对应上分的appId
+    "data": "vWf56GyYGzKjkArWw0JlQgCZDyEBPRpLm/j+9pFpNvnzcW15Rgf3rQmdO90Ti7RAJLbaaOwzu6QOOq9pH6V6YR/IGdp0UBjuq58Lfdw9cclGo1XIWfSbJPhw26PPgL/KEJm0erq+bb8KyKiRXHC6uHo+yZoShZNIcUQ8FcnnjJMfjl8dPDY0TZZ6GY0AkqAiPANlxwerRGr5lXZ1YQSkprOV4cPdBTOjxZ9mNnyYAII="
+}
+
+2.data 的加密方式
+
+data里的参数：
+{
+    "amount": 10000, //操作金额 必须是正数 并且大于0
+    "authUserId": "6666666", //对应上方的authUserId
+    "callbackUrl": "callbackUrl", //上分回调地址
+    "merchantOrder": "merchantOrder", //上分订单号
+    "optType": 1, //操作类型 上分默认为1 2为下分
+    "optUserId": "8888888",  //玩家在钱包注册的tgid
+    "sign": "aeab62ef25936497abece865df754fc0"  //签名
+}
+
+3.sign 签名方法 
+    string param = authUserId + merchantOrder + amount+optUserId+optType+callbackUrl
+	 md5(param+authUserIdToken) //authUserIdToken 对应上面的authUserIdToken
+    md5 之后就是对应的sign
+	
+	
+4.data参数设置完后,对data参数的内容进行加密
+	使用AES加密方式
+	运算模式：ECB
+	填充模式：PKCS7
+
+5.输出格式: Base64 UrlSafe
+	data参数转成json的字符串之后，使用AES加密,使用appkey 的密钥进行加密后得到 data
+	vWf56GyYGzKjkArWw0JlQgCZDyEBPRpLm/j+9pFpNvnzcW15Rgf3rQmdO90Ti7RAJLbaaOwzu6QOOq9pH6V6YR/IGdp0UBjuq58Lfdw9cclGo1XIWfSbJPhw26PPgL/KEJm0erq+bb8KyKiRXHC6uHo+yZoShZNIcUQ8FcnnjJMfjl8dPDY0TZZ6GY0AkqAiPANlxwerRGr5lXZ1YQSkprOV4cPdBTOjxZ9mNnyYAII=
+
+
+6.响应参数：
+
+{
+    "status": 0, //状态 0为成功 ，其余为失败
+    "message": "成功",
+    "data": "" //具体得响应参数
+}
+
+当status 为0时，解析date 成对应类型 ，当前类型时
+{
+    "amount": 10000, //操作金额
+    "merchantOrder": "merchantOrder", //上分订单号
+    "optType": 1, //操作类型 上分默认为1 2为下分
+    "status": 1,  //状态 1:订单拉起 2:成功 3：失败    玩家上分 默认返回是 1
+    "transNo": "THIRD_ORDER_NO" //平台订单号
+}
+
+
+=====================================================================================================================================
+三.上分回调 （需要第三方提供） 直接调用上分回调地址
+1.请求参数：
+{
+    "appId": "9772c7d30dd34b678e33465262af1e32",
+    "data": "vWf56GyYGzKjkArWw0JlQv12MS4Cl+O8RRvkxvyTxN2w219GT/TqNQetH+IuJnwCci+XB5yd6FLKbvIJcbrmmMr4hp1ZidnqrYfw4K99+x5aWxDUyAIloG9DCguS7tXzmikaBK+vpXBClcucpferZA=="
+}
+
+dat加密方式：data数转成json的字符串之后 使用AES加密方式 运算模式：ECB 填充模式：PKCS7
+data参数{
+    "amount": 10000, //操作金额 
+    "merchantOrder": "merchantOrder",  , //上分订单号
+    "optType": 1,  //操作类型 上分默认为1 2为下分
+    "status": 2,   //状态 1:订单拉起 2:成功 3：失败    玩家上分 回调只有2 或者3
+    "transNo": "THIRD_ORDER_NO" //平台订单号
+}
+
+加密之后得到 data
+vWf56GyYGzKjkArWw0JlQv12MS4Cl+O8RRvkxvyTxN2w219GT/TqNQetH+IuJnwCci+XB5yd6FLKbvIJcbrmmMr4hp1ZidnqrYfw4K99+x5aWxDUyAIloG9DCguS7tXzmikaBK+vpXBClcucpferZA==
+
+
+2.响应参数：
+	直返回字符串
+	如果成功直接返回大写SUCCESS 失败直接传FAIL;
+	
+	
+=============================================================================================================	
+
+注册钱包用户ID 8888888 进行下分 10000 ，授权者是 6666666
+	
+四：玩家下分  /api/transfer/withdraw  post 请求 application/json
+1.请求参数：
+{
+    "appId": "9772c7d30dd34b678e33465262af1e32",//对应上分的appId
+    "data": "vWf56GyYGzKjkArWw0JlQgCZDyEBPRpLm/j+9pFpNvnzcW15Rgf3rQmdO90Ti7RAJLbaaOwzu6QOOq9pH6V6YR/IGdp0UBjuq58Lfdw9cclGo1XIWfSbJPhw26PPgL/K5a0D4dl07OnkXr6gaYe0fXo+yZoShZNIcUQ8FcnnjJNkdTTdlsY/czx9xlNRN2XaOLJzZAec0bI/Sb+/VGy++N1tlYiY9YBiSaWJ5MMNhcw="
+}
+
+2.data 的加密方式
+
+data里的参数：
+{
+    "amount": 10000, //操作金额 必须是正数 并且大于0
+    "authUserId": "6666666", //对应上方的authUserId
+    "callbackUrl": "callbackUrl", //上分回调地址
+    "merchantOrder": "merchantOrder", //上分订单号
+    "optType": 2, //操作类型 上分默认为1 2为下分 默认是2 下分
+    "optUserId": "8888888",  //玩家在钱包注册的tgid
+    "sign": "12b8c2f8c338da17f1b83393f08ef0a7"  //签名
+}
+
+3.sign 签名方法 
+    string param = authUserId + merchantOrder + amount+optUserId+optType+callbackUrl
+	 md5(param+authUserIdToken) //authUserIdToken 对应上面的authUserIdToken
+    md5 之后就是对应的sign
+	
+	
+4.data参数设置完后,对data参数的内容进行加密
+	使用AES加密方式
+	运算模式：ECB
+	填充模式：PKCS7
+
+5.输出格式: Base64 UrlSafe
+	data参数转成json的字符串之后，使用AES加密,使用appkey 的密钥进行加密后得到 data
+	vWf56GyYGzKjkArWw0JlQgCZDyEBPRpLm/j+9pFpNvnzcW15Rgf3rQmdO90Ti7RAJLbaaOwzu6QOOq9pH6V6YR/IGdp0UBjuq58Lfdw9cclGo1XIWfSbJPhw26PPgL/K5a0D4dl07OnkXr6gaYe0fXo+yZoShZNIcUQ8FcnnjJNkdTTdlsY/czx9xlNRN2XaOLJzZAec0bI/Sb+/VGy++N1tlYiY9YBiSaWJ5MMNhcw=
+
+
+6.响应参数：
+
+{
+    "status": 0, //状态 0为成功 ，其余为失败
+    "message": "成功",
+    "data": "" //具体得响应参数
+}
+
+当status 为0时，解析date 成对应类型 ，当前类型时
+{
+    "amount": 10000, //操作金额
+    "merchantOrder": "merchantOrder", //上分订单号
+    "optType": 2, //操作类型 上分默认为1 2为下分 默认下分
+    "status": 2,  //状态 1:订单拉起 2:成功 3：失败   玩家上分默认直接返回2或者3
+    "transNo": "THIRD_ORDER_NO" //平台订单号
+}
+
+SUCCESS(0, "成功"),
+    FAIL(1, "失败"),
+    PARAM_ERR(10000, "参数错误"),
+    NO_EXIT(10001, "找不到对应APPID"),
+    DATA_ERR(10003, "解析不到内容"),
+    USER_NO_AUTH(10004, "该authUserId没有授权"),
+    SIGN_ERR(10005, "签名错误"),
+    USER_NO_EXIT(10006, "optUserId未注册"),
+    USER_NO_BALANCE(10007, "authUserId用户余额不足"),
+    MERCHANT_NO_EXIT(10008, "没有该商户"),
+    MERCHANT_ORDER_NO_EXIT(10009, "订单已存在"),
+    REQEUST_MORE(10010, "请求频繁"),

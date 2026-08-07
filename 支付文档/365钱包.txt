@@ -1,0 +1,28 @@
+====== 对接资料 ====== 
+ 通道名称： 365钱包
+ 支付名称： 365钱包
+ 币种单位： BET
+ 人民币汇率： 1:1
+
+ 商户后台： https://vip.nrnmkmsd.com/login
+ 登录账号： 您注册时使用的手机号或者邮箱
+ 商户号/密钥： 登录商户后台查看
+
+ 对接文档： https://www.showdoc.com.cn/2496369801736575/11102011438455653
+ 文档访问密码： 365888
+ 订单金额： 支持小数点后6位
+ 订单限额： 10-9999999 BET
+
+ 支付网关： https://www.tsfggggoo.com/open/api/payment
+ 支付查询网关： https://www.tsfggggoo.com/open/api/query/payment
+
+ 代付网关： https://www.tsfmmddd.com/open/api/withdraw
+ 代付查询网关： https://www.tsfmmddd.com/open/api/query/withdraw
+ 代付测试收款地址： BETW9BUN1929A172262 
+ 对接代付api，需提供请求IP加白 
+
+ 余额查询网关： https://www.tsfggggoo.com/open/api/query/balance
+ 实名查询网关： https://www.tsfmmddd.com/open/api/query/name
+ 回调ip白名单： 43.135.36.248,43.154.101.54
+
+ 365钱包APP下载地址： https://www.365.app

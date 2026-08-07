@@ -1,0 +1,226 @@
+
+商户号merchantNo: BGYL      KEY:  ae0de462cb89c2cc0f341cf674da897a
+
+所有请求/响应都是 application/json 
+
+
+
+=====================1.sign 加密方式===============================
+
+	
+第一步：对参数按照key=value的格式，并按照参数名ASCII字典序排序如
+$stringA="aid=wxd930ea5d5a258f4f&body=test&dinfo=1000&mid=10000100&nonce =ibuaiVcKdpRxkhJA";
+第二步：拼接**商户密钥**：
+$stringSignTemp = $stringA . "&key=192006250b4c09247ec02edce69f6a2d"; // 拼接商户密钥
+最后得到的就是签名串
+$sign = md5($stringSignTemp); // md5加密
+
+
+=======================2.入款下单========================
+
+
+1.入款下单 /deposit/createOrder ,所有参数必填 
+  {
+    "callbackUrl": "merchant_info_callback_url", //回调地址，
+    "channelId": 2,  // 默认是2
+    "coinNum": "1000.0000",  // 充值金额 ,字符串 必须保留4位小数
+    "merchantNo": "BGYL",  // 商户号  唯一
+    "merchantOrderNo": "BGYL_00005", // 商户订单号  唯一
+    "sign": "fa5933e928c4170cbec21f48380cb1b4",  //签名
+    "userId": "user_00001", // 玩家ID
+    "userIp": "127.0.0.1"   // 玩家IP
+ }
+ 
+ 
+ 入款下单响应：
+ {
+    "status": 0, // 0 成功  其余失败
+    "message": "SUCCESS",
+    "data": {
+        "merchantNo": "BGYL", // 商户号  唯一
+        "merchantOrderNo": "BGYL_1000",  // 商户订单号  唯一
+        "transNo": "D_1_20250901140605247_714", //平台订单好
+        "coinNum": "1000.0000", //充值金额
+        "depositAddress": "TBDPixxufkBJuJoNo68aL3WSG81rFDro7M",//充值地址
+        "paymentUrl": "支付地址" //
+    }
+}
+
+
+2.入款回调
+	{
+        "status": 1, //1 成功 2.失败
+        "merchantNo": "BGYL",
+        "merchantOrderNo": "BGYL_1000",
+        "transNo": "D_1_20250901140605247_714",
+        "coinNum": "1000.0000",
+        "realCoinNum": "1000.0000",
+        "createTime": "1756706765000",
+        "tradeTime": "1756711390000",
+        "txId": "21199767b669421a485e302c21d1406e44c7b8792cea7ab2c0137766c31935bc",
+        "sign": "3435fdc68eb174a9e7065554b9b4fced"
+    }
+
+
+接收回调成功，必须返回 'SUCCESS' 字符串(大写)，否则回调不成功
+
+======================3.出款=======================================
+
+1.提款下单  /withdraw/createOrder
+
+{
+    "callbackUrl": "merchant_info_callback_url",   //回调地址，
+    "coinNum": "100.0000", // 提现金额 ,字符串 必须保留4位小数
+    "merchantNo": "BGYL", // 商户号  唯一
+    "merchantOrderNo": "BGYL_W_10000",  // 商户订单号  唯一
+    "receiptAddress": "TTMX2sJdqmirQDG89aPFwmJ8VgEbvrSRJY",  //提款地址
+    "sign": "6e23266c24c897220693799d0295d55d",  //签名
+    "userId": "user_00001", //用户id
+    "userIp": "127.0.0.1", //用户ip
+    "withdrawType": 2  //提现类型 2
+}
+
+提款下单响应  // 0 成功  其余失败
+{
+    "status": 0, 
+    "message": "SUCCESS",
+    "data": {
+        "merchantNo": "BGYL", // 商户号  唯一
+        "merchantOrderNo": "BGYL_W_10000",   // 商户订单号  唯一
+        "transNo": "W_1_20250901180725339_903"  //平台订单号
+    }
+}
+
+2.提款回调
+	{
+        "status": 1,   //1 成功 2.失败
+        "merchantNo": "BGYL",  // 商户号  唯一
+        "merchantOrderNo": "BGYL_1000", // 商户订单号  唯一
+        "transNo": "D_1_20250901140605247_714", //平台订单号
+        "coinNum": "1000.0000",   //玩家提款金额
+        "realCoinNum": "1000.0000",  //到账金额
+        "createTime": "1756706765000",  //发起时间
+        "tradeTime": "1756711390000",   //转账时间
+        "txId": "21199767b669421a485e302c21d1406e44c7b8792cea7ab2c0137766c31935bc",  //交易哈希
+        "sign": "3435fdc68eb174a9e7065554b9b4fced"
+    }
+
+
+接收回调成功，必须返回 'SUCCESS' 字符串(大写)，否则回调不成功
+
+
+
+============================订单查询 ======================================
+
+1.入款订单查询 
+  /deposit/queryOrder
+  
+  {
+    "merchantNo": "BGYL",
+    "merchantOrderNo": "BGYL_1000",
+    "sign": "f977848c8e33dbbe57a79edd7f4cb7ac"
+ }
+ 
+ 响应 data 和回调的响应一致
+{
+    "status": 0,
+    "msg": "SUCCESS",
+    "data": {
+        "status": 1,
+        "merchantNo": "BGYL",
+        "merchantOrderNo": "BGYL_1000",
+        "transNo": "D_1_20250901140605247_714",
+        "coinNum": "1000.0000",
+        "realCoinNum": "1000.0000",
+        "createTime": "1756706765000",
+        "tradeTime": "1756711390000",
+        "txId": "21199767b669421a485e302c21d1406e44c7b8792cea7ab2c0137766c31935bc",
+        "sign": "3435fdc68eb174a9e7065554b9b4fced"
+    }
+}
+  
+2.出款查询
+	/withdraw/queryOrder
+	
+ {
+    "merchantNo": "BGYL",
+    "merchantOrderNo": "BGYL_1000",
+    "sign": "f977848c8e33dbbe57a79edd7f4cb7ac"
+ }
+ 
+ 响应 data 和回调的响应一致
+{
+    "status": 0,
+    "msg": "SUCCESS",
+    "data": {
+        "status": 1,
+        "merchantNo": "BGYL",
+        "merchantOrderNo": "BGYL_1000",
+        "transNo": "D_1_20250901140605247_714",
+        "coinNum": "1000.0000",
+        "realCoinNum": "1000.0000",
+        "createTime": "1756706765000",
+        "tradeTime": "1756711390000",
+        "txId": "21199767b669421a485e302c21d1406e44c7b8792cea7ab2c0137766c31935bc",
+        "sign": "3435fdc68eb174a9e7065554b9b4fced"
+    }
+}
+
+
+
+
+======================================================================================
+通道1v1地址模式
+
+
+一.新增接口 请求/查询地址  /deposit/createAddress
+
+请求参数：
+{
+    "channelId": 2, //默认2
+    "merchantNo": "TD1V1",  //商户名
+    "sign": "7120175f7bb7ef1c4785a7af7c535c12",
+    "userId": "1111bbb"  //用ID
+}
+
+响应失败：
+{
+    "status": -1,   // -1 为失败 0 为成功
+    "message": "error",
+    "data": "error"
+}
+响应成功：
+{
+    "status": 0,  //-1 为失败 0 为成功
+    "message": "SUCCESS",
+    "data": "TUP9YW92m4wk7xqvCLHgmLN9PS2TiuioG4" //status 为0时 才会有这个地址 
+}
+
+
+2.新增一个充值回调接口
+{
+    "status": 1,
+    "userId": "1111bbb"  //商户用户ID
+    "merchantNo": "TD1V1",
+    "merchantOrderNo": "", //商户订单号
+    "transNo": "scan__20260125154852307_18518",
+    "coinNum": "30.2222",  //拉起支付金额
+    "realCoinNum": "30.2222", //实际支付金额
+    "createTime": "1769327337000",
+    "tradeTime": "1769330937000",
+    "depositAddress": "TUP9YW92m4wk7xqvCLHgmLN9PS2TiuioG4", //充值地址
+    "txId": "47f35c34119c5d5f11a5fc5a0269bc326458ed3d96cde72c7ea32aee027c8a26",
+    "sign": "12ade27c866abd4689d1faec5b092bc6",
+}
+
+回调失败直接返回FAIL ,成功则返回 你方订单号 我放用于保存merchantOrderNo字段
+
+
+
+
+
+
+
+
+
+

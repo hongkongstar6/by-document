@@ -1,0 +1,37 @@
+
+https://doc.iptgame.com/docs/en/changes.html
+
+
+转账钱包API   https://doc.iptgame.com/docs/en/changes.html
+
+无缝钱包API    https://doc.iptgame.com/docs/wallet-en/changes.html
+看无缝钱包api
+
+
+https://join.skype.com/jraQYCkhimMa
+
+skype账号：
+meiw2109@gmail.com，Qwe334455
+
+正式服游戏 https://game.28.game 
+ip  154.207.104.2  
+
+充值 https://pay.28.game
+
+数据库：mysql -uzhpread01 -P 11001 -p -h 127.0.0.1   密码：bUm$:iy:11Ou
+show databases;
+use pay;
+show tables;
+describe 表名;
+select * from table where id=1 \G;   就可以格式化输出
+
+汇旺测试服后台：https://sdk-boss4.oykqk.com/#/login
+账号：+855-989898123
+验证码，然后输入6个0
+
+测试支付账号：  855-979797123
+
+
+汇旺正式服后台：https://sdk-boss.hh3721.com/#/login
+账号：+855-314963742
+密码：
